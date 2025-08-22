@@ -12,8 +12,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class Game {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private Integer ano;
@@ -21,7 +20,11 @@ public class Game {
     private String plataforma;
     private Double pontuacao;
     private String imgUrl;
+
+    @Column(name = "descricaoreduzida", columnDefinition = "TEXT")
     private String descricaoReduzida;
+
+    @Column(name = "descricaocompleta", columnDefinition = "TEXT")
     private String descricaoCompleta;
 
 
